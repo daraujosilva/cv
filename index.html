@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
+		<link rel="shortcut icon" href="favicon.png">
+        <script src="js/jquery.js"></script>
+        <script src="js/game.js"></script>
+    </head>
+
+    <body>
+		<div id="preload"></div>
+		<table id="contenedor">
+			<tr>
+				<td id="cabecera">
+					<table id="tablaCabecera">
+						<tr>
+							<td class="tituloChico">COLISIONES</td>
+							<td class="tituloChico">PUNTOS</td>
+							<td class="tituloChico">UBICACION</td>
+						</tr>
+						<tr>
+							<td id="txtColisiones">0/10</td>
+							<td id="txtPuntos">0</td>
+							<td id="txtUbicacion">1</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td id="areaJuego">
+					<table id="menuInicio">
+						<tr>
+							<td colspan="3"><div id="logoInicio"><img src="img/wormhole5.png"></div></td>
+						</tr>
+						<tr class="contenedorBotones">
+							<td><div class="boton" onclick="empezar()">Empezar</div></td>
+						</tr>
+						<tr class="contenedorBotones">
+							<td><div class="boton" onclick="mostrarInstrucciones()">Instrucciones</div></td>
+						</tr>
+						<tr class="contenedorBotones">
+							<td><div class="boton" onclick="location.href='../index.html'">Salir</div></td>
+						</tr>
+					</table>
+					<table id="menuPausa">
+						<tr>
+							<td colspan="3"><div id="textoMenu"></div></td>
+						</tr>
+						<tr class="contenedorBotones">
+							<td><div class="boton" onclick="reanudar()">Reanudar</div></td>
+						</tr>
+						<tr class="contenedorBotones">
+							<td><div class="boton" onclick="reiniciar()">Reiniciar</div></td>
+						</tr>
+						<tr class="contenedorBotones">
+							<td><div class="boton" onclick="mostrarInstrucciones()">Instrucciones</div></td>
+						</tr>
+						<tr class="contenedorBotones">
+							<td><div class="boton" onclick="location.href='../index.html'">Salir</div></td>
+						</tr>
+					</table>
+					<div id="guardar"></div>
+					<div id="instrucciones">
+						<h3>INSTRUCCIONES </h3>
+						<table id="tablaInstrucciones" cellPadding="0">
+							<tr>
+								<td>
+									<img id="imgPad" src="img/pad.png">
+								</td>
+								<td align="left">
+									Usa las flechas del teclado o presiona los botones de direccion para moverte
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img id="imgPunto" src="img/punto.png">
+								</td>
+								<td align="left">
+									Atrapa las piezas azules para sumar puntos
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img id="imgHole" src="img/hole.png">
+								</td>
+								<td align="left">
+									Usa los agujeros de gusano para cambiar de pantalla (debes pasar por su centro)
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img id="imgHuevo" src="img/huevo.png"> 
+								</td>
+								<td align="left">
+									Evita colisionar los huevos
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td align="left">
+									Evita colisionar con los bordes
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td align="left">
+									Evita auto-colisionar
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td align="left">
+									Presiona la tecla <strong>SPACE</strong> o toca la pantalla para pausar
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td align="left">
+									Presiona <strong>ENTER</strong> para reanudar
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td align="left">
+									Presiona <strong>ENTER</strong> o tocala pantalla para empezar
+								</td>
+							</tr>
+						</table>
+						<br>
+						<div class="boton" onclick="volver()">Volver</div>
+					</div>
+					<div id="gameOver">
+						<br><br><br><br>
+						<br><br><br><br>
+						<h2 align="center">GAME OVER</h2>
+						<br><br><br><br>
+						<br><br><br><br>
+						<div class="boton" onclick="inicio()">Volver al menu principal</div>
+					</div>
+					<div id="transparente" onclick="pausa()">
+						<canvas id="juego"></canvas>
+					</div>
+					
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<div id="botonera">
+						<table id="tablaBotones" cellPadding="0">
+							<tr>
+								
+								<td id="botonArriba" class="botonSolo" colspan="3" >
+									<img src="img/flecha_up.png" class="botonDireccion" onclick="moverArriba()">
+								</td>
+								
+							</tr>
+							<tr>
+								<td id="botonIzquierda" class="botonDos">
+									<img src="img/flecha_left.png" class="botonDireccion" onclick="moverIzquierda()">
+								</td>
+								<td id="espacioMedio"></td>
+								<td id="botonDerecha" class="botonDos">
+									<img src="img/flecha_right.png"  class="botonDireccion" onclick="moverDerecha()">
+								</td>
+							</tr>
+							<tr>
+								
+								<td id="botonAbajo" class="botonSolo" colspan="3" >
+									<img src="img/flecha_down.png" class="botonDireccion" onclick="moverAbajo()">
+								</td>
+								
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+    			
+    </body>
+
+</html>

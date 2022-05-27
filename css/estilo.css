@@ -1,0 +1,126 @@
+body {
+  background-color: #000000;
+  text-align: center;
+  text-align: -webkit-center;
+  margin:0;
+  padding:0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+img{
+    max-width: 60%;
+    height: auto;
+}
+table{
+    margin: 0 0;
+    text-align: center;
+	/*cellspacing:0;*/
+	padding:0px;
+	border-collapse: collapse;
+}
+canvas{
+    border: 2px solid rgb(35,35,35);
+    background-color: #000000;
+}
+.placard{
+    /*top:510px;*/
+    background-color: #686767;
+    /*font-family: myBitFont;
+    font-size: 20px;*/
+}
+.tituloChico{
+	font-family: myPrStart;
+    font-size: 0.4em;
+    color: rgb(0, 255, 0);
+}
+#txtUbicacion, #txtColisiones{
+	font-family: myPrStart;
+    font-size: 0.7em;
+    color: rgb(255, 255, 255);
+}
+#txtPuntos{
+	font-family: myPrStart;
+    font-size: 1.4em;
+    color: rgb(255, 255, 255);
+}
+#loader{
+	background-color:rgb(0,0,0);
+}
+#contenedor{
+	display:none;
+	position: relative;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+#botonera{
+	position: relative;
+	text-align:center;
+	padding:0;
+	margin:0;
+}
+#tablaBotones {
+	font-family: myPrStart;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+	cursor:pointer;
+    padding:0;
+    
+}
+
+#transparente{
+	cursor:pointer;
+	z-index:9;
+	/*display:block;*/
+}
+#gameOver{
+	font-family: myPrStart;
+    font-size: 12px;
+	color:rgb(255,0,0);
+}
+.boton{
+    /*height:40px;
+	padding-top:20px;*/
+    background-color: black;
+    border: 2px solid #181818;
+    text-align: center;
+    text-align: -webkit-center;
+    font-family: myPrStart;
+    font-size: 12px;
+    color: white;
+    cursor:pointer;
+}
+.contenedorBotones{
+	/* height:80px;*/
+}
+.boton:hover{
+    font-size: 13px;
+    color: rgb(10, 207, 10);
+}
+#textoMenu{
+    font-family: myPrStart;
+    font-size: 20px;
+    color: rgb(87, 84, 84);
+    text-align:center;
+}
+#instrucciones{
+	font-family: myPrStart;
+    font-size: 0.7em;
+	line-height: 2;
+    color: rgb(255, 255, 255);
+    text-align:center;
+}
+#tablaInstrucciones td{
+    border-bottom: 2px solid #181818; 
+}
+@font-face {
+    font-family: myBitFont;
+    /*src: url(amiga4ever.ttf);*/
+    src: url(bitcell_memesbruh03.ttf);
+  }
+  @font-face {
+    font-family: myPrStart;
+    /*src: url(amiga4ever.ttf);*/
+    src: url(prstart.ttf);
+  }
