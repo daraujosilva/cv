@@ -264,12 +264,16 @@ function sound(src,vol) {
   function activarSonido(){
 	if(sonido_activado==true){
 		sonido_activado=false;
-		imagen=document.getElementById("sonido");
-		imagen.src="../img/sonido_off.png";
+		$("#audioInicio").text("Activar sonidos");
+		$("#audioPausa").text("Activar sonidos");
+		//imagen=document.getElementById("sonido");
+		//imagen.src="../img/sonido_off.png";
 	}else{
 		sonido_activado=true;
-		imagen=document.getElementById("sonido");
-		imagen.src="../img/sonido_on.png";
+		$("#audioInicio").text("Desactivar sonidos");
+		$("#audioPausa").text("Desactivar sonidos");
+		//imagen=document.getElementById("sonido");
+		//imagen.src="../img/sonido_on.png";
 	}
   }
 
